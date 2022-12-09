@@ -50,7 +50,7 @@ export const Welcome = () => {
         height: "100vh",
       }}
     >
-      <Box sx={{ maxWidth: 400 }}>
+      <Box sx={{ maxWidth: 400, textAlign: 'center' }}>
         <Typography variant={"h1"} sx={{ fontSize: "32px", fontWeight: 500 }}>
           {slides[activeStep].header}
         </Typography>
