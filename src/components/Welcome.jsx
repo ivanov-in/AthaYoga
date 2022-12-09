@@ -1,8 +1,10 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
-import { Box, MobileStepper, Typography, Button, Link } from "@mui/material";
+import { Box, MobileStepper, Typography, Button } from "@mui/material";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
+
 import firstImage from "../images/welcome1.png";
 import secondImage from "../images/welcome2.png";
 import thirdImage from "../images/welcome3.png";
@@ -92,22 +94,23 @@ export const Welcome = () => {
           ))}
         </AutoPlaySwipeableViews>
         <MobileStepper
-          sx={{ justifyContent: "center", 
-          mb: "70px" 
-        }}
+          sx={{ justifyContent: "center", mb: "70px" }}
           steps={maxSteps}
           position="static"
           activeStep={activeStep}
         />
       </Box>
-      <Button variant="contained" sx={{ 
-        mb: "16px" 
-      }}>
+      <Button
+        variant="contained"
+        sx={{ mb: "16px" }}
+        component={Link}
+        to="/register"
+      >
         Присоединиться
       </Button>
       <Typography>
         Уже есть аккаунт?
-        <Link underline="none" sx={{ ml: "8px" }}>
+        <Link underline="none" sx={{ ml: "8px" }} component={Link} to="/login">
           Войти
         </Link>
       </Typography>
